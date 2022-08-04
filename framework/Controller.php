@@ -8,7 +8,7 @@ class Controller
 {
     protected function view($template_path, $data = [])
     {
-        $template = file_get_contents('./app/MVC/views/' . $template_path);
+        $template = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/app/MVC/Views/' . $template_path);
         extract($data, EXTR_SKIP);
         ob_start();
         eval("?>" . $template . "<?");

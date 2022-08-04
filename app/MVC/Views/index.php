@@ -44,22 +44,23 @@
                                     <thead>
                                         <tr class="no-gutters">
                                             <th class="col-2">
-                                                <a href="?page=<?=$currentPage?>&sort=status&order=desc">↓</a>
-                                                <a href="?page=<?=$currentPage?>&sort=status&order=asc">↑</a>
+                                                <a href="?page=<?=$currentPage?>&sort=status&order=desc">&#129147;</a>
+                                                <a href="?page=<?=$currentPage?>&sort=status&order=asc">&#129145;</a>
                                                 Status
                                             </th>
                                             <th class="col-2">
-                                                <a href="?page=<?=$currentPage?>&sort=username&order=desc">↓</a>
-                                                <a href="?page=<?=$currentPage?>&sort=username&order=asc">↑</a>
+                                                <a href="?page=<?=$currentPage?>&sort=username&order=desc">&#129147;</a>
+                                                <a href="?page=<?=$currentPage?>&sort=username&order=asc">&#129145;</a>
                                                 User
                                             </th>
                                             <th class="col-2">
-                                                <a href="?page=<?=$currentPage?>&sort=email&order=desc">↓</a>
-                                                <a href="?page=<?=$currentPage?>&sort=email&order=asc">↑</a>
+                                                <a href="?page=<?=$currentPage?>&sort=email&order=desc">&#129147;</a>
+                                                <a href="?page=<?=$currentPage?>&sort=email&order=asc">&#129145;</a>
                                                 Email
                                             </th>
-                                            <th class="col-4">Task</th>
-                                            <th class="col-2">date</th>
+                                            <th class="col-3">Task</th>
+                                            <th class="col-1">Was changed</th>
+                                            <th class="col-2 text-center">Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -72,6 +73,7 @@
                                         <td><?= htmlentities($task->username, ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= htmlentities($task->email, ENT_QUOTES, 'UTF-8') ?></td>
                                         <td><?= htmlentities($task->text, ENT_QUOTES, 'UTF-8') ?></td>
+                                        <td><?= $task->wasChanged ? "Yes" : "No" ?></td>
                                         <td><?= $task->date ?></td>
                                     </tr>
                                     <?php endforeach; ?>

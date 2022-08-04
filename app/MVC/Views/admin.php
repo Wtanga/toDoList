@@ -26,7 +26,8 @@
                             <th class="col-2">Status</th>
                             <th class="col-2">User</th>
                             <th class="col-2">Email</th>
-                            <th class="col-4">Task</th>
+                            <th class="col-3">Task</th>
+                            <th class="col-1">Was changed</th>
                             <th class="col-2">date</th>
                         </tr>
                         </thead>
@@ -48,6 +49,7 @@
                                         <input type="submit" class="btn btn-success btn-sm" value="Save">
                                     </form>
                                 </td>
+                                <td><?= $task->wasChanged ? "Yes" : "No" ?></td>
                                 <td><?= $task->date ?></td>
                             </tr>
                         <?php endforeach; ?>
