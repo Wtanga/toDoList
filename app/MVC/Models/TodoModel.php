@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\MVC\Models;
 
 use Framework\MysqlModel;

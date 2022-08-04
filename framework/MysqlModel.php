@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Framework;
 
 use App\MysqlConnection;
