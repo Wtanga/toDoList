@@ -6,41 +6,18 @@ namespace Framework;
 
 abstract class Model
 {
-    public function getById($id)
-    {
-        return $this->getWhere([$this->getIdField() => $id]);
-    }
-
-    public abstract function getWhere($conditions);
-
     protected function getIdField()
     {
         return "id";
     }
 
-    public function all()
-    {
-        return $this->getWhere([]);
-    }
+    public abstract function getById($id);
 
-    public function getPage($page, $sort, $order)
-    {
-        return $this->getWhere([]);
-    }
+    public abstract function all();
 
-    public function deleteById($id)
-    {
-        return $this->getWhere([$this->getIdField() => $id]);
-    }
+    public abstract function getPage($page, $sort, $order);
 
-    public abstract function deleteWhere($conditions);
-
-    public function updateById($id, $data)
-    {
-        return $this->updateWhere([$this->getIdField() => $id], $data);
-    }
-
-    public abstract function updateWhere($conditions, $data);
+    public abstract function updateById($id, $data);
 
     public abstract function create($data);
 }

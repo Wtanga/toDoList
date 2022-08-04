@@ -8,7 +8,6 @@ use PDO;
 
 class MysqlModel extends Model
 {
-
     protected $table;
     protected $connection;
 
@@ -23,22 +22,6 @@ class MysqlModel extends Model
         $query->execute();
         return $query->fetchAll(PDO::FETCH_CLASS)[0];
     }
-
-    public function getWhere($conditions)
-    {
-        // TODO: Implement getWhere() method.
-    }
-
-    public function deleteWhere($conditions)
-    {
-        // TODO: Implement deleteWhere() method.
-    }
-
-    public function updateWhere($conditions, $data)
-    {
-        // TODO: Implement updateWhere() method.
-    }
-
 
     public function updateById($id, $data)
     {
@@ -89,7 +72,8 @@ class MysqlModel extends Model
 
     }
 
-    public function rowCount(){
+    public function rowCount()
+    {
         $query= $this->connection->prepare("SELECT COUNT(*) as count FROM `{$this->table}`");
         $query->execute();
         $row = $query->fetch();
@@ -104,6 +88,6 @@ class MysqlModel extends Model
         $query->execute();
 
         $hash = $query->fetch()['password'];
-        return $hash === $data['password'];
+        return password_verify($data['password'], $hash);
     }
 }

@@ -19,7 +19,6 @@ class TodosController extends Controller
     public function index($request)
     {
         $currentPage = $_GET['page'] ?? 1;
-
         $sort = isset($_GET['sort'])
             ? $this->validateParameter($_GET['sort'], self::SORT_DEFAULT_VALUE)
             : self::SORT_DEFAULT_VALUE;
@@ -63,13 +62,6 @@ class TodosController extends Controller
     {
         $this->model->updateById($task_id, ['complete' => !$this->model->getById($task_id)->complete]);
         header("Location: /");
-    }
-
-    private function configurateTable($pages, $currentPage, $sort, $order)
-    {
-
-        $data = [];
-        return $data;
     }
 
     private function validateParameter($parameter, $defaultValue)
