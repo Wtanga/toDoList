@@ -1,0 +1,25 @@
+{
+  "name": "wtanga/todolist",
+  "description": "Simple todolist with crud and rbac",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Egor Logutenko",
+      "email": "pkkk.2011@mail.ru"
+    }
+  ],
+  "require": {
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "framework",
+      "App\\": "app"
+    },
+    "files": [
+      "app/config.php",
+      "app/routes.php"
+    ]
+  }
+}
